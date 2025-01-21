@@ -8,38 +8,89 @@
     <style>
         .center-tweet {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Creates two equal columns */
-            grid-gap: 10px; /* Adds spacing between tweets */
-            width: 1000px; /* Maintains total width */
+            grid-template-columns: repeat(3, 1fr);
+            /* Creates two equal columns */
+            grid-gap: 10px;
+            /* Adds spacing between tweets */
+            width: 1000px;
+            /* Maintains total width */
+        }
+
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .collapsible:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: none;
+            /* Initially hidden */
+        }
+
+        .content.active {
+            display: grid;
+            /* Or whatever display you use for your tweets */
         }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Taskbar will be loaded here -->
     <div id="taskbar-container"></div>
-    <h1>Test</h1>
 
-    <div class="center-tweet">
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Netanyahu with the full permission of Trump is now expanding his war on the Palestinians. <br><br>No matter who the President is, the goal of the US of erasing Palestine remains and only takes on new forms. <a href="https://t.co/QOkSvdEPZA">https://t.co/QOkSvdEPZA</a></p>&mdash; Dr. Omar Suleiman (@omarsuleiman) <a href="https://twitter.com/omarsuleiman/status/1881694308962800062?ref_src=twsrc%5Etfw">January 21, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">⚡️BREAKING:<br><br>The moment a Palestinian was sniped while returning home in Jenin camp today, West Bank.<br><br>So far Israel killed 6 Palestinians and injured 35 in a very short time as a part of Israel’s new aggression named “Operation Iron Wall” <a href="https://t.co/fz7hQzPwH7">pic.twitter.com/fz7hQzPwH7</a></p>&mdash; Suppressed News. (@SuppressedNws) <a href="https://twitter.com/SuppressedNws/status/1881682511933407450?ref_src=twsrc%5Etfw">January 21, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">⚡️🇵🇸JUST IN:<br><br>A Palestinian mother in Rafah returned to her destroyed home and found the skeletal remains of her only child, killed by Israel. She tried to hug and kiss his bones for a final goodbye.<br><br>Since the ceasefire, at least 97 decomposed bodies have been discovered on the… <a href="https://t.co/WAGeQgmjnx">pic.twitter.com/WAGeQgmjnx</a></p>&mdash; Suppressed News. (@SuppressedNws) <a href="https://twitter.com/SuppressedNws/status/1881566580691103850?ref_src=twsrc%5Etfw">January 21, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        
+    <h1 class="collapsible">Test 🔽</h1>
+    <div class="center-tweet content">
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">Netanyahu with the full permission of Trump is now expanding his war on the
+                Palestinians. <br><br>No matter who the President is, the goal of the US of erasing Palestine remains and
+                only takes on new forms. <a href="https://t.co/QOkSvdEPZA">https://t.co/QOkSvdEPZA</a></p>— Dr. Omar
+            Suleiman (@omarsuleiman) <a
+                href="https://twitter.com/omarsuleiman/status/1881694308962800062?ref_src=twsrc%5Etfw">January 21,
+                2025</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">⚡️BREAKING:<br><br>The moment a Palestinian was sniped while returning home in
+                Jenin camp today, West Bank.<br><br>So far Israel killed 6 Palestinians and injured 35 in a very short
+                time as a part of Israel’s new aggression named “Operation Iron Wall” <a
+                    href="https://t.co/fz7hQzPwH7">pic.twitter.com/fz7hQzPwH7</a></p>— Suppressed News.
+            (@SuppressedNws) <a
+                href="https://twitter.com/SuppressedNws/status/1881682511933407450?ref_src=twsrc%5Etfw">January 21,
+                2025</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">⚡️🇵🇸JUST IN:<br><br>A Palestinian mother in Rafah returned to her destroyed home
+                and found the skeletal remains of her only child, killed by Israel. She tried to hug and kiss his bones
+                for a final goodbye.<br><br>Since the ceasefire, at least 97 decomposed bodies have been discovered on
+                the… <a href="https://t.co/WAGeQgmjnx">pic.twitter.com/WAGeQgmjnx</a></p>— Suppressed News.
+            (@SuppressedNws) <a
+                href="https://twitter.com/SuppressedNws/status/1881566580691103850?ref_src=twsrc%5Etfw">January 21,
+                2025</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     </div>
 
-    <h1>Treatment of Palestinian prisoners</h1>
-    <div class="center-tweet">
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">⚡️🇵🇸🇮🇱JUST IN: Where is the outrage for Palestinian hostages held by Israel?<br><br>The freed Palestinians hostage Rula Hassanein from Bethlehem:<br><br>&quot;The tragic situation that the female prisoners live in is truly difficult. There have been significant violations by the prison… <a href="https://t.co/NVHXfbfXrP">pic.twitter.com/NVHXfbfXrP</a></p>&mdash; Suppressed News. (@SuppressedNws) <a href="https://twitter.com/SuppressedNws/status/1881570576856232070?ref_src=twsrc%5Etfw">January 21, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <h1 class="collapsible">Treatment of Palestinian prisoners 🔽</h1>
+    <div class="center-tweet content">
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">⚡️🇵🇸🇮🇱JUST IN: Where is the outrage for Palestinian hostages held by
+                Israel?<br><br>The freed Palestinians hostage Rula Hassanein from Bethlehem:<br><br>"The tragic
+                situation that the female prisoners live in is truly difficult. There have been significant violations
+                by the prison… <a href="https://t.co/NVHXfbfXrP">pic.twitter.com/NVHXfbfXrP</a></p>— Suppressed
+            News. (@SuppressedNws) <a
+                href="https://twitter.com/SuppressedNws/status/1881570576856232070?ref_src=twsrc%5Etfw">January 21,
+                2025</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">no need to imagine... c*nt <a href="https://t.co/h2GvIK7dJ0">https://t.co/h2GvIK7dJ0</a> <a href="https://t.co/RY2nY4Cp4Q">pic.twitter.com/RY2nY4Cp4Q</a></p>&mdash; Hank Hirntod Jr. 🍉🏴🚩🔥 (@darkdroogie) <a href="https://twitter.com/darkdroogie/status/1881309681869901960?ref_src=twsrc%5Etfw">January 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    
-    <!-- <iframe width="320" height="180" 
-            src="https://www.youtube.com/embed/8hiHE4yNuJw" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>  -->
+
 </body>
 
 <script>
@@ -49,6 +100,24 @@
         .then(data => {
             document.getElementById('taskbar-container').innerHTML = data;
         });
+
+    // Get all collapsible headers
+    const collapsibles = document.querySelectorAll(".collapsible");
+
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener("click", function () {
+            // Toggle the content
+            const content = this.nextElementSibling;
+            content.classList.toggle("active");
+
+            // Change the symbol based on the state
+            if (content.classList.contains("active")) {
+                this.textContent = this.textContent.replace("🔽", "🔼"); // Collapse symbol
+            } else {
+                this.textContent = this.textContent.replace("🔼", "🔽"); // Expand symbol
+            }
+        });
+    });
 </script>
 
 </html>
