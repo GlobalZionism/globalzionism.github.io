@@ -3,13 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Web Page</title>
+    <title>Index Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden; /* Prevent scrollbars due to particles */
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the particles behind everything */
+        }
+
+        .center-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            color: white;
+            z-index: 1; /* Ensure content stays above particles */
+            position: relative;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 0 20px;
+        }
+
+        img.mirror {
+            transform: scaleX(-1);
+        }
+
+        /* Rotation animation */
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        img {
+            animation: spin 5s linear infinite; /* Rotate over 5 seconds, repeat infinitely */
+        }
+
+    </style>
 </head>
 <body>
-    <div id="taskbar-container"></div>
-    <h1>Hello, World!</h1>
-    <p>This is a very basic HTML page.</p>
+    <!-- Particle Animation -->
+    <div id="particles-js"></div>
 
+    <!-- Taskbar will be loaded here -->
+    <div id="taskbar-container"></div>
+
+    <!-- Centered content with images -->
+    <div class="center-content">
+        <!-- Mirrored emoji on the left -->
+        <img src="emoji.jpg" alt="Emoji" class="mirror">
+        <!-- Text content -->
+        <div>
+            <h1>Welcome to the  Index Page</h1>
+            <p>This is the main page. Use the taskbar to navigate between pages.</p>
+        </div>
+        <!-- Emoji on the right -->
+        <img src="emoji.jpg" alt="Emoji">
+    </div>
+
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // JavaScript to load the taskbar from taskbar.html
         fetch('taskbar.html')
@@ -17,7 +88,113 @@
             .then(data => {
                 document.getElementById('taskbar-container').innerHTML = data;
             });
-    </script>
 
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
