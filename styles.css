@@ -62,11 +62,11 @@ body {
 
 .center-tweet {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     /* Creates two equal columns */
     grid-gap: 10px;
     /* Adds spacing between tweets */
-    width: 1000px;
+    width: 100%;
     /* Maintains total width */
     z-index: 10; /* This line sets the z-index for the tweet container */
 }
